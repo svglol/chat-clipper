@@ -38,7 +38,7 @@
               Once you have a created a url, you can't edit it so make sure you have channel and webhook details correct.
             </p>
             <UButton type="submit" size="lg" color="primary" class="w-full" block :disabled="!loggedIn || !state.channel" icon="solar:paperclip-2-bold">
-              Create Clip URL
+              Create Clip Command URL
             </UButton>
           </UForm>
         </div>
@@ -76,7 +76,7 @@
             </div>
 
             <UButton color="primary" size="lg" class="w-full mt-6" block @click="reset">
-              Create Another Clip URL
+              Create Another Clip Command URL
             </UButton>
           </div>
         </div>
