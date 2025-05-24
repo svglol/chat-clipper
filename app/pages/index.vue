@@ -5,7 +5,7 @@
         <div v-if="!createdID" class="bg-(--ui-bg-muted) rounded-lg shadow-lg p-6">
           <div class="text-center mb-6">
             <h2 class="text-2xl font-bold text-(--ui-text) items-center">
-              <UIcon name="solar:paperclip-2-bold" /> Chat Clipper
+              <UIcon name="solar:paperclip-2-bold" /> QuickClip
             </h2>
             <p class="text-(--ui-text-muted) mt-2">
               Set up your Twitch clip automation for use with Twitch chat bots like Nightbot, StreamElements, and more.
@@ -84,7 +84,7 @@
     </div>
 
     <footer class="mt-8 text-sm text-center text-(--ui-text-muted)">
-      Built by svglol – <a href="https://github.com/svglol/chat-clipper" target="_blank" class="underline hover:text-primary">View on GitHub</a>
+      Built by svglol – <a href="https://github.com/svglol/quickclip" target="_blank" class="underline hover:text-primary">View on GitHub</a>
     </footer>
   </div>
 </template>
@@ -97,7 +97,7 @@ const { loggedIn, user, clear, openInPopup } = useUserSession()
 const toast = useToast()
 
 useSeoMeta({
-  title: 'Chat Clipper - Create Twitch Clip URLs',
+  title: 'QuickClip  - Create Twitch Clip URLs',
   description: 'Easily create Twitch clip URLs for use with chat bots like Nightbot, StreamElements, and more.',
 })
 

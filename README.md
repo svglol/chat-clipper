@@ -1,6 +1,6 @@
-# 🔗 Chat Clipper
+# 🔗 QuickClip 
 
-Chat Clipper is a simple web tool that allows Twitch streamers to generate reusable clip creation URLs that work with popular chat bots like Nightbot, StreamElements, StreamLabs, and more.
+QuickClip  is a simple web tool that allows Twitch streamers to generate reusable clip creation URLs that work with popular chat bots like Nightbot, StreamElements, StreamLabs, and more.
 
 ## 🛠 Features
 

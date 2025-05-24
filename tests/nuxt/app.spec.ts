@@ -9,6 +9,6 @@ describe('app', () => {
   })
   it('app has chat clipper text', async () => {
     const component = await mountSuspended(app, { route: '/' })
-    expect(component.html()).toContain('Chat Clipper')
+    expect(component.html()).toContain('QuickClip ')
   })
 })
