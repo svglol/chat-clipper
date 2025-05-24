@@ -5,3 +5,7 @@
 /* stylelint-disable at-rule-no-unknown */
 @import "tailwindcss";
 @import "@nuxt/ui";
+
+@theme {
+    --font-sans: 'Inconsolata', sans-serif;
+  }

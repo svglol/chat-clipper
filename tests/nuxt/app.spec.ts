@@ -7,8 +7,8 @@ describe('app', () => {
     const component = await mountSuspended(app, { route: '/' })
     expect(component).toBeTruthy()
   })
-  it('app has welcome to nuxt text', async () => {
+  it('app has chat clipper text', async () => {
     const component = await mountSuspended(app, { route: '/' })
-    expect(component.html()).toContain('Welcome to Nuxt!')
+    expect(component.html()).toContain('Chat Clipper')
   })
 })

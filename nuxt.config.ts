@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@vue-macros/nuxt',
     '@nuxt/eslint',
+    'nuxt-auth-utils',
   ],
   future: {
     compatibilityVersion: 4,
@@ -29,4 +30,48 @@ export default defineNuxtConfig({
     },
   },
   css: ['~/assets/css/main.css'],
+  nitro: {
+    storage: {
+      data: {
+        driver: 'cloudflare-kv-binding',
+        binding: 'DATA',
+      },
+      cache: {
+        driver: 'cloudflare-kv-binding',
+        binding: 'CACHE',
+      },
+    },
+    devStorage: {
+      data: {
+        driver: 'fs',
+        base: './.data/',
+      },
+      cache: {
+        driver: 'fs',
+        base: './.cache/',
+      },
+    },
+  },
+  runtimeConfig: {
+    public: {
+      baseUrl: 'http://localhost:3000',
+    },
+  },
+
+  colorMode: {
+    preference: 'dark',
+    fallback: 'dark',
+    classSuffix: '',
+  },
+  app: {
+    head: {
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/svg+xml',
+          href: '/favicon.svg',
+        },
+      ],
+    },
+  },
 })
