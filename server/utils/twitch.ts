@@ -9,7 +9,7 @@ export async function fetchFromTwitchAPI<T>(endpoint: string, params: URLSearchP
     const data = await $fetch<TwitchAPIResponse<T>>(url, {
       method,
       headers: {
-        'Client-ID': useRuntimeConfig().oauth.twitch.clientId as string,
+        'Client-ID': useRuntimeConfig().twitchClientId as string,
         'Authorization': `Bearer ${token}`,
       },
     })
@@ -44,7 +44,7 @@ export async function getTwitchToken() {
 async function getToken() {
   const data = await $fetch<TwitchToken>('https://id.twitch.tv/oauth2/token', {
     method: 'POST',
-    body: `client_id=${useRuntimeConfig().oauth.twitch.clientId}&client_secret=${useRuntimeConfig().oauth.twitch.clientSecret}&grant_type=client_credentials`,
+    body: `client_id=${useRuntimeConfig().twitchClientId}&client_secret=${useRuntimeConfig().twitchClientSecret}&grant_type=client_credentials`,
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
@@ -86,8 +86,8 @@ export async function getUserToken(event: H3Event, token: { access_token: string
 
   try {
     const body = new URLSearchParams({
-      client_id: useRuntimeConfig().oauth.twitch.clientId as string,
-      client_secret: useRuntimeConfig().oauth.twitch.clientSecret as string,
+      client_id: useRuntimeConfig().twitchClientId as string,
+      client_secret: useRuntimeConfig().twitchClientSecret as string,
       refresh_token: token.refresh_token ?? '',
       grant_type: 'refresh_token',
     })

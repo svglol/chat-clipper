@@ -1,3 +1,4 @@
+/* eslint-disable node/prefer-global/process */
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
@@ -53,6 +54,8 @@ export default defineNuxtConfig({
     },
   },
   runtimeConfig: {
+    twitchClientId: process.env.NUXT_OAUTH_TWITCH_CLIENT_ID,
+    twitchClientSecret: process.env.NUXT_OAUTH_TWITCH_CLIENT_SECRET,
     public: {
       baseUrl: 'http://localhost:3000',
     },
