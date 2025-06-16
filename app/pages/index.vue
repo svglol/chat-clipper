@@ -1,13 +1,13 @@
 <template>
-  <div class="min-h-screen flex flex-col items-center justify-between p-4">
-    <div class="w-full max-w-2xl mx-auto flex-1 flex items-center">
+  <div class="flex min-h-screen flex-col items-center justify-between p-4">
+    <div class="mx-auto flex w-full max-w-2xl flex-1 items-center">
       <div class="w-full">
-        <div v-if="!createdID" class="bg-(--ui-bg-muted) rounded-lg shadow-lg p-6">
-          <div class="text-center mb-6">
-            <h2 class="text-2xl font-bold text-(--ui-text) items-center">
+        <div v-if="!createdID" class="rounded-lg bg-(--ui-bg-muted) p-6 shadow-lg">
+          <div class="mb-6 text-center">
+            <h2 class="items-center text-2xl font-bold text-(--ui-text)">
               <UIcon name="solar:paperclip-2-bold" /> QuickClip
             </h2>
-            <p class="text-(--ui-text-muted) mt-2">
+            <p class="mt-2 text-(--ui-text-muted)">
               Set up your Twitch clip automation for use with Twitch chat bots like Nightbot, StreamElements, and more.
             </p>
           </div>
@@ -22,7 +22,7 @@
             </UFormField>
 
             <UFormField label="Twitch Login" name="loggedIn" description="Twitch account to create the clips from" :required="true">
-              <div v-if="loggedIn" class="flex items-center justify-between p-2 bg-purple-500 rounded-lg border border-purple-600">
+              <div v-if="loggedIn" class="flex items-center justify-between rounded-lg border border-purple-600 bg-purple-500 p-2">
                 <span class="text-sm text-purple-200">Logged in as {{ user?.name }}</span>
                 <UButton size="sm" color="neutral" variant="soft" @click="clear">
                   Logout
@@ -34,7 +34,7 @@
                 </UButton>
               </div>
             </UFormField>
-            <p class="text-(--ui-text-dimmed) mt-2">
+            <p class="mt-2 text-(--ui-text-dimmed)">
               Once you have a created a url, you can't edit it so make sure you have channel and webhook details correct.
             </p>
             <UButton type="submit" size="lg" color="primary" class="w-full" block :disabled="!loggedIn || !state.channel" icon="solar:paperclip-2-bold">
@@ -43,16 +43,16 @@
           </UForm>
         </div>
 
-        <div v-else class="bg-(--ui-bg-muted) rounded-lg shadow-lg p-6">
+        <div v-else class="rounded-lg bg-(--ui-bg-muted) p-6 shadow-lg">
           <div class="text-center">
-            <h3 class="text-lg font-semibold text-(--ui-text) mb-2">
+            <h3 class="mb-2 text-lg font-semibold text-(--ui-text)">
               Clip URL Created!
             </h3>
-            <p class="text-(--ui-text-muted) mb-6">
+            <p class="mb-6 text-(--ui-text-muted)">
               Clip Command for '{{ state.channel }}' has been successfully created.
             </p>
 
-            <div class="space-y-4 text-left font-mono text-sm text-(--ui-text-muted) rounded-lg p-4 overflow-x-auto bg-(--ui-bg-accented)">
+            <div class="space-y-4 overflow-x-auto rounded-lg bg-(--ui-bg-accented) p-4 text-left font-mono text-sm text-(--ui-text-muted)">
               <div>
                 <span class="font-bold text-primary">URL</span><br>
                 <code>{{ `${$config.public.baseUrl}/api/clip-create/${createdID}` }}</code>
@@ -75,7 +75,7 @@
               </div>
             </div>
 
-            <UButton color="primary" size="lg" class="w-full mt-6" block @click="reset">
+            <UButton color="primary" size="lg" class="mt-6 w-full" block @click="reset">
               Create Another Clip Command URL
             </UButton>
           </div>
@@ -83,7 +83,7 @@
       </div>
     </div>
 
-    <footer class="mt-8 text-sm text-center text-(--ui-text-muted)">
+    <footer class="mt-8 text-center text-sm text-(--ui-text-muted)">
       Built by svglol – <a href="https://github.com/svglol/quickclip" target="_blank" class="underline hover:text-primary">View on GitHub</a>
     </footer>
   </div>
