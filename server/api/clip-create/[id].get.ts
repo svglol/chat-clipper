@@ -43,7 +43,7 @@ export default defineEventHandler(async (event) => {
         await $fetch(data.discordWebhook, {
           method: 'POST',
           body: {
-            content: `https://clips.twitch.tv/${clipData.id}`,
+            content: `https://clips.twitch.tv/${clipData.id}\n [✏️ Edit Clip](<https://clips.twitch.tv/${clipData.id}/edit>)`,
           },
         })
       }
